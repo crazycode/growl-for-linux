@@ -1,12 +1,12 @@
 /* Copyright 2011 by Yasuhiro Matsumoto
  * modification, are permitted provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice,
  *    this list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
@@ -349,8 +349,8 @@ display_show(NOTIFICATION_INFO* const ni) {
   const gint vert_count = screen_rect.height / 110;
   const gint cx = di->pos / vert_count;
   const gint cy = di->pos % vert_count;
-  di->x = screen_rect.x + screen_rect.width  - (cx + 1) * 250;
-  di->y = screen_rect.y + screen_rect.height - (cy + 1) * 110;
+  di->x = screen_rect.x + screen_rect.width / 2  - (cx + 1) * 250;
+  di->y = screen_rect.y + screen_rect.height / 2 - (cy + 1) * 110;
   if (di->y < 0) {
     free_display_info(di);
     return FALSE;
