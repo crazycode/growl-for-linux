@@ -1,12 +1,12 @@
 /* Copyright 2011 by Yasuhiro Matsumoto
  * modification, are permitted provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice,
  *    this list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
@@ -119,7 +119,7 @@ display_animation_func(gpointer data) {
 
   if (di->offset < 160) {
     di->offset += 2;
-    gdk_window_move_resize(di->widget.popup->window, di->x, di->y - di->offset, 180, di->offset);
+    gdk_window_move_resize(di->widget.popup->window, di->x, di->y - di->offset, 600, di->offset);
   }
 
   if (di->timeout < 30) {
@@ -283,7 +283,7 @@ create_popup_skelton() {
   gtk_label_set_line_wrap_mode(GTK_LABEL(di->widget.text), PANGO_WRAP_CHAR);
   gtk_box_pack_start(GTK_BOX(vbox), di->widget.text, FALSE, FALSE, 0);
 
-  gtk_widget_set_size_request(di->widget.popup, 180, 1);
+  gtk_widget_set_size_request(di->widget.popup, 600, 1);
 
 #ifdef _WIN32
   SetWindowPos(GDK_WINDOW_HWND(di->widget.popup->window), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
@@ -339,8 +339,8 @@ display_show(NOTIFICATION_INFO* const ni) {
   const gint vert_count = screen_rect.height / 180;
   const gint cx = di->pos / vert_count;
   const gint cy = di->pos % vert_count;
-  di->x = screen_rect.x + screen_rect.width  - cx * 200 - 180;
-  di->y = screen_rect.y + screen_rect.height - cy * 180 + 20;
+  di->x = screen_rect.x + screen_rect.width / 3  - cx * 200 - 300;
+  di->y = screen_rect.y + screen_rect.height - cy * 180 - 60;
   if (di->x < 0) {
     free_display_info(di);
     return FALSE;
