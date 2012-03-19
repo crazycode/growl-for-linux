@@ -365,11 +365,11 @@ display_init() {
 
   font_sans12_desc = pango_font_description_new();
   pango_font_description_set_family(font_sans12_desc, "Sans");
-  pango_font_description_set_size(font_sans12_desc, 12 * PANGO_SCALE);
+  pango_font_description_set_size(font_sans12_desc, 16 * PANGO_SCALE);
 
   font_sans8_desc = pango_font_description_new();
   pango_font_description_set_family(font_sans8_desc, "Sans");
-  pango_font_description_set_size(font_sans8_desc, 8 * PANGO_SCALE);
+  pango_font_description_set_size(font_sans8_desc, 12 * PANGO_SCALE);
 
   GdkScreen* const screen = gdk_screen_get_default();
   const gint monitor_num = gdk_screen_get_primary_monitor(screen);
